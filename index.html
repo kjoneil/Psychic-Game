@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic_Game</title>
+</head>
+<body>
+    <!-- <style>
+    #wins{
+        counter-increment: initial + 1;
+    }
+    #losses{
+        counter-increment: initial + 1;
+    }
+    #left{
+        counter-increment: initial -1;
+        counter-reset: 9;
+    }
+    </style> -->
+    <header>
+        <h1>Psychic_Game</h1>
+    </header>
+    
+    <!-- Creating a div with all counter labels inside -->
+    
+    <div>
+        <p>Guess what letter I'm thinking of</p>
+        <p id="wins">Wins:0</p>
+        <p id="losses">Losses: 0</p>
+        <p id="left">Guesses left: 9</p>
+        <p>Letters guessed so far:<span id="user-text"></span></p>
+    </div>
+
+
+    <script>
+        // Variable for the computer to pull from
+
+    var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    
+        // Displayed counters
+    var winsCounter = 0;
+    var loseCounter = 0;
+    var guessesLeft = 9;
+    var userGuess = document.getElementById("user-text");
+
+        
+        var computerGuess = computerChoices[Math.floor(Math.random()* computerChoices.length)];
+        
+        var userInput = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        
+        // Event to capture user input and compare it to computer output
+    document.onkeyup = function(event){
+            userGuess.textContent = event.key;
+        // Conditional statement that gives the user a win if his guess matches the computer
+       
+        if(userInput === computerGuess){
+            for( var userGuess= 0, userGuess <10;)
+        }
+                winsCounter += 1;
+            alert("You are psychic!");
+            }
+            else{
+                guesses --;
+            
+            }
+                // if the counter is taken down to zero user loses and restarts the game
+            if(guessesLeft === 0){
+                loseCounter += 1;
+            }
+            document.getElementById("wins").innerHTML = "Wins: " + winsCounter;
+            document.getElementById("losses").innerHTML = "Losses: " + loseCounter;
+            document.getElementById("left").innerHTML = "Guesses left: " + guessesLeft;
+        };
+    
+
+
+    
+    
+    </script>
+</body>
+</html>
